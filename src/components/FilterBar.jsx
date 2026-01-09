@@ -1,5 +1,4 @@
-﻿// src/components/FilterBar.jsx
-import React from 'react';
+﻿import React from 'react';
 
 const FILTER_OPTIONS = [
   { label: 'Main Story', value: 'main' },
@@ -19,7 +18,6 @@ const FilterBar = ({ selectedFilters, onToggleFilter }) => {
         </span>
         
         {FILTER_OPTIONS.map((option) => {
-          // Kiểm tra xem option này có đang được chọn không
           const isActive = selectedFilters.includes(option.value);
 
           return (
@@ -34,7 +32,7 @@ const FilterBar = ({ selectedFilters, onToggleFilter }) => {
             >
               <input
                 type="checkbox"
-                className="hidden" // Ẩn checkbox mặc định đi cho đẹp
+                className="hidden"
                 checked={isActive}
                 onChange={() => onToggleFilter(option.value)}
               />

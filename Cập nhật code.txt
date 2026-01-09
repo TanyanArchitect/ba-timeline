@@ -1,0 +1,23 @@
+BƯỚC 1: Sửa và Kiểm tra trên máy (Quan trọng)
+Trước khi đưa lên mạng, bạn phải chắc chắn nó chạy đúng trên máy mình đã.
+Sửa code trong VS Code -> Lưu lại (Ctrl + S).
+Mở Terminal, chạy lệnh: npm run dev
+Vào localhost:5173 xem thử.
+Nếu lỗi: Sửa tiếp cho đến khi hết lỗi.
+Nếu ngon lành: Tắt server (Bấm Ctrl + C ở Terminal) để sang bước 2.
+
+BƯỚC 2: Đẩy lên mạng (3 câu lệnh)
+Sau khi đã tắt server test, bạn gõ lần lượt 3 lệnh sau vào Terminal:
+Lệnh 1: Gom hàng (Gói tất cả file đã sửa lại)
+git add .
+Lệnh 2: Đóng gói và Dán nhãn (Ghi chú xem phiên bản này có gì mới)
+git commit -m "Ghi chú ngắn gọn về cái bạn vừa sửa"
+(Ví dụ: git commit -m "Sua mau chu header" hoặc git commit -m "Them filter bar")
+Lệnh 3: Gửi đi (Đẩy lên GitHub)
+git push
+
+BƯỚC 3: Chờ và Tận hưởng
+Sau khi bạn gõ git push và thấy báo thành công:
+Chờ khoảng 1-2 phút: GitHub Actions (con robot bạn vừa cài) sẽ tự động nhận code, cài đặt, và cập nhật website. Bạn không cần làm gì thêm.
+Kiểm tra: Vào link website chính thức (https://TanyanArchitect.github.io/ba-timeline/).
+Lưu ý: Nếu vào web mà thấy vẫn y nguyên cũ, hãy bấm tổ hợp phím Ctrl + F5 (hoặc Cmd + Shift + R trên Mac) để xóa bộ nhớ đệm trình duyệt và tải nội dung mới nhất.

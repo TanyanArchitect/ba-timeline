@@ -1,27 +1,21 @@
-﻿# Cấu hình Backend
-# Khi chạy ở máy (localhost), nó sẽ lưu thẳng vào ổ cứng của bạn
-backend:
+﻿backend:
   name: git-gateway
   branch: main
 
-# Chế độ làm việc cục bộ (quan trọng để test ngay bây giờ)
 local_backend: true
 
-# Nơi lưu ảnh khi bạn upload từ CMS
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-# Cấu hình danh sách dữ liệu (Collections)
 collections:
-  - name: "stories" # Tên collection trong code
-    label: "Timeline Stories" # Tên hiển thị trên menu
-    folder: "src/content/stories" # Folder chứa các file data json
-    create: true # Cho phép tạo mới
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Định dạng tên file
-    extension: "json" # Lưu dưới dạng file JSON
+  - name: "stories"
+    label: "Timeline Stories"
+    folder: "src/content/stories"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
     format: "json"
     
-    # CÁC TRƯỜNG NHẬP LIỆU (FIELDS)
     fields:
       - {label: "ID (Unique)", name: "id", widget: "string", hint: "VD: vol1-chap1. Không dấu, không cách"}
       

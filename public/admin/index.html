@@ -14,10 +14,8 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   
   <script>
-    // Script phụ để xóa dòng thông báo khi CMS load xong
-    // (Chỉ mang tính chất thẩm mỹ)
     const observer = new MutationObserver((mutations) => {
-       if (document.body.children.length > 3) { // Khi CMS thêm giao diện vào body
+       if (document.body.children.length > 3) {
            const loader = document.getElementById('loading-msg');
            if(loader) loader.style.display = 'none';
        }
