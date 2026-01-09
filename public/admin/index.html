@@ -1,0 +1,28 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Archive Timeline Manager</title>
+</head>
+<body>
+  <div id="loading-msg" style="text-align: center; margin-top: 50px;">
+    <h2>Đang tải trang quản trị...</h2>
+    <p>Nếu thấy dòng này lâu quá 10 giây, hãy kiểm tra Console (F12).</p>
+  </div>
+
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    // Script phụ để xóa dòng thông báo khi CMS load xong
+    // (Chỉ mang tính chất thẩm mỹ)
+    const observer = new MutationObserver((mutations) => {
+       if (document.body.children.length > 3) { // Khi CMS thêm giao diện vào body
+           const loader = document.getElementById('loading-msg');
+           if(loader) loader.style.display = 'none';
+       }
+    });
+    observer.observe(document.body, { childList: true });
+  </script>
+</body>
+</html>
