@@ -73,21 +73,23 @@ const StoryModal = ({ story, onClose }) => {
             ) : (
               <div className="w-full h-full bg-slate-800 flex items-center justify-center text-slate-500">No Image</div>
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent"></div>
           </div>
 
           <div className="absolute bottom-4 left-6 right-16">
-            <span className="bg-cyan-600 text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wide shadow-lg border border-cyan-400/50">
+            <span className="inline-block bg-cyan-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wide shadow-lg border border-cyan-400/50 mb-2">
               {story.type}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mt-2 text-shadow-lg drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
-              {story.display_title}
-            </h2>
+
             {story.sub_title && (
-              <p className="text-cyan-300 text-sm sm:text-base font-medium mt-1 drop-shadow-md">
+              <p className="text-cyan-400 text-lg sm:text-xl font-bold uppercase tracking-wide drop-shadow-md mb-1 leading-tight">
                 {story.sub_title}
               </p>
             )}
+
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-white text-shadow-lg drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight">
+              {story.display_title}
+            </h2>
           </div>
         </div>
 
