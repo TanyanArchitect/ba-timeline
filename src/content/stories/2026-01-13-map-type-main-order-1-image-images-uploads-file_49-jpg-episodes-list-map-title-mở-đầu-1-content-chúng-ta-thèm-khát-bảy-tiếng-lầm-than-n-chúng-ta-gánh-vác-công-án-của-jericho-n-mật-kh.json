@@ -1,0 +1,16 @@
+{
+  "type": "main",
+  "order": 1,
+  "image": "/images/uploads/file_49.jpg",
+  "episodes": [
+    {
+      "title": "Mở Đầu 1",
+      "content": ""
+    },
+    {
+      "title": "Mở Đầu 2"
+    }
+  ],
+  "display_title": "Mở Đầu",
+  "sub_title": "Mở Đầu"
+}

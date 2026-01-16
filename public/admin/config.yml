@@ -1,0 +1,61 @@
+﻿
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+
+public_folder: "/images/uploads"
+
+collections:
+  - name: "stories"
+    label: "Timeline Stories"
+    folder: "src/content/stories"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    
+    fields:
+      - label: "Loại Story"
+        name: "type"
+        widget: "select"
+        options: 
+          - { label: "Main Story (Cốt truyện chính)", value: "main" }
+          - { label: "Event Story (Sự kiện)", value: "event" }
+          - { label: "Mini Story", value: "mini" }
+          - { label: "Group Story (Câu lạc bộ)", value: "group" }
+          - { label: "Relationship (Mối quan hệ)", value: "relationship" }
+          - { label: "Task / Guide", value: "task" }
+        default: "event"
+
+      - label: "Tiêu đề hiển thị"
+        name: "display_title"
+        widget: "string"
+
+      - label: "Thứ tự sắp xếp (Order)"
+        name: "order"
+        widget: "number"
+        value_type: "int"
+        default: 0
+        hint: "Nhập số để sắp xếp timeline (1, 2, 3...)"
+
+      - label: "Ảnh bìa"
+        name: "image"
+        widget: "image"
+
+      - label: "Mô tả phụ (Sub-title)"
+        name: "sub_title"
+        widget: "string"
+        required: false
+
+      - label: "Danh sách Tập (Episodes)"
+        name: "episodes"
+        widget: "list"
+        collapsed: false
+        summary: "{{fields.title}}"
+        fields:
+          - {label: "Tên tập", name: "title", widget: "string"}
+          - {label: "Nội dung hoặc Link", name: "content", widget: "text", required: false}
