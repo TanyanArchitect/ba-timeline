@@ -7,11 +7,18 @@ export const loadStories = () => {
     
     const filename = path.split('/').pop().replace('.json', '');
     
+    let imageUrl = data.image;
+
+    if (imageUrl && !imageUrl.startsWith('http')) {
+      const cleanPath = imageUrl.startsWith('/') ? imageUrl.slice(1) : imageUrl;
+      
+      imageUrl = import.meta.env.BASE_URL + cleanPath;
+    }
+
     return {
       id: filename,
-      ...data,
-      
-      image: data.image ? (data.image.startsWith('http') ? data.image : data.image) : null
+      ...data, 
+      image: imageUrl
     };
   });
 
