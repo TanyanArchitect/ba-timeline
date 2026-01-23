@@ -1,12 +1,11 @@
 ﻿
 backend:
   name: git-gateway
-  branch: main
+  branch: main 
 
 local_backend: true
 
 media_folder: "public/images/uploads"
-
 public_folder: "/images/uploads"
 
 collections:
@@ -17,6 +16,8 @@ collections:
     extension: "json"
     format: "json"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    
+    summary: "{{fields.order}}. {{fields.sub_title}} - {{fields.display_title}}"
     
     fields:
       - label: "Loại Story"
@@ -31,7 +32,7 @@ collections:
           - { label: "Task / Guide", value: "task" }
         default: "event"
 
-      - label: "Tiêu đề hiển thị"
+      - label: "Tiêu đề hiển thị (Title)"
         name: "display_title"
         widget: "string"
 
@@ -50,11 +51,12 @@ collections:
         name: "sub_title"
         widget: "string"
         required: false
+        hint: "VD: Chương 1. Ủy Ban Bàn Bạc Đối Sách"
 
       - label: "Danh sách Tập (Episodes)"
         name: "episodes"
         widget: "list"
-        collapsed: false
+        collapsed: false 
         summary: "{{fields.title}}"
         fields:
           - {label: "Tên tập", name: "title", widget: "string"}
